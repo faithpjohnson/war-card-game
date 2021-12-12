@@ -27,5 +27,14 @@
         4.2.3) render war
         4.2.4) render winner
     4.3) wait for user to click draw button to flip cards
+5) conditions for a win
+    5.1) the player with the highest value flipped card will have both cards added to their deck
+        5.2.1) increasing their count by one 
+    5.2) if both players have flipped cards of equal value
+        5.2.2) call war function
+        5.2.3) if cards are of equal value again
+        5.2.4) repeat war function until a player gets a higher value card
+    5.3) if a player collects all 52 cards 
+        5.3.1) they win the game 
 5) Handle player clicking draw cards button 
 6) Handle player clicking replay button 

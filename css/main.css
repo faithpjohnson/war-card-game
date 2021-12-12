@@ -1,0 +1,76 @@
+
+* {
+    /* height & width now includes border & padding */
+    box-sizing: border-box;
+  }
+  
+body {
+    background-color: #BAA1A7;
+    display: grid;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Staatliches', cursive;
+}
+
+.container{
+    display: grid;
+    grid-template-areas: 
+    "a a a a a"
+    "b b wnr c c"
+    "d e f g h"
+    ". i j k ."
+    ;
+    grid-column-gap: 20px;
+    grid-row-gap: 15px;
+}
+.title{ 
+    grid-area: a; 
+    place-self: center;
+    font-size: 30px;
+    
+}
+.flipped-card1{
+    grid-area: b; 
+    background-color: hotpink;
+}
+.winner-msg{
+    grid-area: wnr;
+    background-color: hotpink; 
+}
+.flipped-card2{
+    grid-area: c; 
+    background: hotpink;
+}
+.card-count1{
+    grid-area: d;
+    background: hotpink;
+}
+.card-deck1{
+    grid-area: e;
+    background: hotpink;
+}
+.drw-btn{
+    grid-area: f;
+    background: hotpink;
+}
+.card-deck2{
+    grid-area: g;
+    background: hotpink;
+}
+.card-count2{
+    grid-area: h;
+    background: hotpink;
+}
+.player1{
+    grid-area: i;
+    background: hotpink;
+}
+.restart-btn{
+    grid-area: j;
+    background: hotpink;
+}
+.player2{
+    grid-area: k;
+    background: hotpink;
+}
+
