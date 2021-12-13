@@ -2,7 +2,7 @@
 * {
     /* height & width now includes border & padding */
     box-sizing: border-box;
-  }
+}
   
 body {
     background-color: #BAA1A7;
@@ -10,6 +10,13 @@ body {
     height: 100vh;
     margin: 0;
     font-family: 'Staatliches', cursive;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    border: 4px dotted grey;
 }
 
 .container{
@@ -23,58 +30,115 @@ body {
     grid-column-gap: 20px;
     grid-row-gap: 15px;
 }
-.title{ 
-    grid-area: ttl; 
+
+.title{
+    grid-area: ttl;
     place-self: center;
-    font-size: 30px;
-}    
-.flipped-card1{
-    grid-area: flp1; 
-    place-self: center;
-    
 }
-.winner-msg{
+
+.flp1 {
+    grid-area: flp1;
+    place-self: center;
+}
+
+.wnr {
     grid-area: wnr;
     place-self: center;
 }
-.flipped-card2{
-    grid-area: flp2; 
+
+.flp2 {
+    grid-area: flp2;
     place-self: center;
 }
-.card-count1{
+
+.cc1{
     grid-area: cc1;
     place-self: center;
 }
-.card-deck1{
+
+.cd1{
     grid-area: cd1;
     place-self: center;
-  
 }
-.drw-btn{
+
+.drw{
     grid-area: drw;
     place-self: center;
 }
-.card-deck2{
+
+.cd2{
     grid-area: cd2;
     place-self: center;
 }
-.card-count2{
+
+.cc2{
     grid-area: cc2;
     place-self: center;
 }
-.player1{
+
+.plr1{
     grid-area: plr1;
     place-self: center;
-    
-}
-.restart-btn{
-    grid-area: rsrt;
-    place-self: center;
-    
-}
-.player2{
-    grid-area: plr2;
-    place-self: center;
-    
 }
 
+.rsrt{
+    grid-area: rsrt;
+    place-self: center;
+}
+
+.plr2{
+    grid-area: plr2;
+    place-self: center;
+}
+
+h1{
+    font-size: 80px;
+}
+
+img{
+    max-width: 20%;
+    height: auto;
+    margin: 0 0 0 50px;
+}
+
+.card-count2 p {
+    font-size: 20px;
+    border: 5px solid #CE6D8B;
+    padding: 15px 60px 15px 15px;
+}
+
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    color: black;
+    border: 4px solid grey;
+    border-radius: 5px;
+    outline: none;
+    font-family: 'Staatliches', cursive;
+  }
+  
+button:hover {
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+}
+
+.card-count{
+    font-size: 20px;
+    border: 5px solid black;
+    padding: 5px 60px 5px 5px;
+}
+
+.player1 p {
+    font-size: 25px;
+    border: 5px solid black;
+    padding: 10px;
+}
+
+.player2 p {
+    font-size: 25px;
+    border: 5px solid black;
+    padding: 10px;
+}
