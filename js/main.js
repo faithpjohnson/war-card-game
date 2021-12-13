@@ -1,7 +1,6 @@
 /**** Constants ****/
-const rank = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
-const suit = ['♣', '♦', '♥', '♠'];
-
+const ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
+const suits = ['♣', '♦', '♥', '♠'];
 
 
 /**** State Variables ****/
@@ -20,6 +19,7 @@ const countEl = {
     player2: document.querySelector("#player-2-card-count")
 };
 const wnrMsgEl = document.querySelector(".winner-msg");
+const shuffledContainer = document.querySelector(".shuffled-card-container");
 
 /**** Event Listeners ****/
 // elements to listen for- buttons have been tested
@@ -36,24 +36,76 @@ function init(){
 
 }
 
-
 function render(){
 
 }
 
-
-
 function playRound(){
-    console.log("PR function is being invoked!")
+    
 }
 
 function restartGame(){
     console.log("RG function is being invoked!");
 }
 
+function getNewShuffledDeck() {
+    const tempDeck = [...masterDeck];
+    const newShuffledDeck = [];
+    while (tempDeck.length) {
+        const randomIdx = Math.floor(Math.random() * tempDeck.length);
+        newShuffledDeck.push(tempDeck.splice(randomIdx, 1)[0]);
+    }
+    return newShuffledDeck;
+}
+
+function renderNewShuffledDeck(){
+    shuffledDeck = getNewShuffledDeck();
+    renderDeck(shuffledDeck, shuffledContainer);
+}
+
+
+function renderDeck(deck, container){
+    container.innerHTML = '';
+const cardsHtml = deck.reduce(function(html, card) {
+    return html + `<div class="card${card.face}"</div>`;
+}, '');
+    container.innerHTML = cardsHtml;
+}
+
+function buildMasterDeck(){
+    const deck = [];
+    suits.forEach(function(suit){
+        ranks.forEach(function(rank){
+            deck.push({
+                face: `${suit}${rank}`
+            });
+        });
+    });
+    return deck;
+}
+
+renderNewShuffledDeck();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // create a card class 
 // that returns a new array-that will be the deck
-class Card {
+/*class Card {
     constructor(rank, suit){
     this.rank = rank;
     this.suit = suit;
@@ -64,4 +116,9 @@ let deck = rank.map(function(el1){
         return new Card(el1, el2)
     })
 });
-console.log(deck);
+// reduce deck to one array
+let reduceDeck = deck.reduce(function(acc, curr){
+    return acc.concat(curr);
+})
+
+console.log(reduceDeck);*/
