@@ -101,12 +101,6 @@ img{
     margin: 0 0 0 50px;
 }
 
-.card-count2 p {
-    font-size: 20px;
-    border: 5px solid #CE6D8B;
-    padding: 15px 60px 15px 15px;
-}
-
 button {
     display: block;
     margin: 10px auto;
