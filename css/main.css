@@ -15,62 +15,66 @@ body {
 .container{
     display: grid;
     grid-template-areas: 
-    "a a a a a"
-    "b b wnr c c"
-    "d e f g h"
-    ". i j k ."
+    "ttl ttl ttl ttl ttl"
+    "flp1 flp1 wnr flp2 flp2"
+    "cc1 cd1 drw cd2 cc2"
+    ". plr1 rsrt plr2 ."
     ;
     grid-column-gap: 20px;
     grid-row-gap: 15px;
 }
 .title{ 
-    grid-area: a; 
+    grid-area: ttl; 
     place-self: center;
     font-size: 30px;
-    
-}
+}    
 .flipped-card1{
-    grid-area: b; 
-    background-color: hotpink;
+    grid-area: flp1; 
+    place-self: center;
+    
 }
 .winner-msg{
     grid-area: wnr;
-    background-color: hotpink; 
+    place-self: center;
 }
 .flipped-card2{
-    grid-area: c; 
-    background: hotpink;
+    grid-area: flp2; 
+    place-self: center;
 }
 .card-count1{
-    grid-area: d;
-    background: hotpink;
+    grid-area: cc1;
+    place-self: center;
 }
 .card-deck1{
-    grid-area: e;
-    background: hotpink;
+    grid-area: cd1;
+    place-self: center;
+  
 }
 .drw-btn{
-    grid-area: f;
-    background: hotpink;
+    grid-area: drw;
+    place-self: center;
 }
 .card-deck2{
-    grid-area: g;
-    background: hotpink;
+    grid-area: cd2;
+    place-self: center;
 }
 .card-count2{
-    grid-area: h;
-    background: hotpink;
+    grid-area: cc2;
+    place-self: center;
 }
 .player1{
-    grid-area: i;
-    background: hotpink;
+    grid-area: plr1;
+    place-self: center;
+    
 }
 .restart-btn{
-    grid-area: j;
-    background: hotpink;
+    grid-area: rsrt;
+    place-self: center;
+    
 }
 .player2{
-    grid-area: k;
-    background: hotpink;
+    grid-area: plr2;
+    place-self: center;
+    
 }
 
