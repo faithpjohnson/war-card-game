@@ -1,6 +1,6 @@
 /**** Constants ****/
-const ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
-const suits = ['♣', '♦', '♥', '♠'];
+const ranks = ['02', '03', '04', '05', '06', '07', '08', '09', '10', 'J', 'Q', 'K', 'A'];
+const suits = ['s', 'c', 'd', 'h'];
 
 
 /**** State Variables ****/
@@ -97,7 +97,7 @@ function init() {
     };
     winner = null;
     render();
-    
+ 
 }
 
 function render() {
@@ -105,11 +105,6 @@ function render() {
     countEl.player2.innerText = cardCount.player2;
 }
 
-function renderDeck(d1, d2){
-    document.querySelector(".card-back-container").innerHTML = `<div class="card-back-container">
-    <div id="card-deck1" class="card large ${d1}"</div>
-    <div id="card-deck2" class="card large ${d2}"</div>`;
-}
 
 
 
