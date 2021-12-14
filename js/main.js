@@ -6,8 +6,7 @@ const suits = ['♣', '♦', '♥', '♠'];
 /**** State Variables ****/
 let player1Deck;
 let player2Deck;
-let player1Count;
-let player2Count;
+let cardCount;
 let war;
 let shuffledDeck = [];
 let winner;
@@ -36,51 +35,75 @@ class Card {
     }
 }
 
-function createDeck() {
-    const deck = []
-    ranks.forEach(function(rank) {
-        suits.forEach(function(suit) {
-            const tmpCard = new Card(rank, suit);
-            deck.push(tmpCard)
+class Deck {
+// create deck
+    constructor() {
+        let tmpCards = [];
+        ranks.forEach(function(rank) {
+            suits.forEach(function(suit) {
+                const tmpCard = new Card(rank, suit);
+                tmpCards.push(tmpCard);
+            })
         })
-    })
-    return deck;
-}
 
-function shuffleDeck(deck) {
-    let shuffledDeck = [];
-    for (let i = 0; i < 52; i++) {
-        let rndIdx =  Math.floor(Math.random() * deck.length);
-        shuffledDeck.push(deck.splice(rndIdx, 1)[0]);
+        this.cards = tmpCards;
+        console.log(tmpCards);
     }
-    return shuffledDeck;
+    // getter
+    get getCards(){
+        return this.cards;
+    }
+    // methods
+    shuffleDeck() {
+        let shuffledDeck = [];
+        for (let i = 0; i < 52; i++) {
+            let rndIdx =  Math.floor(Math.random() * this.cards.length);
+            shuffledDeck.push(this.cards.splice(rndIdx, 1)[0]);
+        }
+        this.cards = shuffledDeck;
+        console.log(shuffledDeck);
+    }
+    splitPlayerDecks(){
+        let player1Deck = this.cards.slice(0, 26);
+        console.log("test", player1Deck)
+
+        let player2Deck = this.cards.slice(26, 52);
+        console.log("test2", player2Deck)
+        return [player1Deck, player2Deck];
+    }
+    // add method for card count
 }
-
-// create player decks
-function createPlayerDecks() {
-    player1Deck = shuffledDeck.slice(0, 26);
-    player2Deck = shuffledDeck.slice(26, 52);
-    return player1Deck, player2Deck;
-}
-
-console.log(createPlayerDecks());
-
 
 
 init();
 // initialize start variables 
 // call shuffle & create deck functions upon loading
 function init() {
-    let tempDeck = createDeck();
-    let tempShuffledDeck = shuffleDeck(tempDeck);
-    let playerDecks = createPlayerDecks(tempShuffledDeck);
-    console.log(tempShuffledDeck);
-    console.log(playerDecks);
+
+    // create deck
+    let tempDeck = new Deck();
+
+    // shuffle deck
+    tempDeck.shuffleDeck();
+  
+   //split deck between players
+    let playerDecks = tempDeck.splitPlayerDecks();
+    console.log("Player 1: ", playerDecks[0]);
+    console.log("Player 2: ", playerDecks[1]);
+
+    // cardCount = {
+    //     player1:  26,
+    //     player2: 26
+    // };
+
+    // render();
 }
 
 function render() {
-
+    countEl.player1.innerText = cardCount.player1;
+    countEl.player2.innerText = cardCount.player2;
 }
+
 
 function playRound() {
     console.log("PR functino is being invoked!");
