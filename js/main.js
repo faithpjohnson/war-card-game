@@ -74,7 +74,7 @@ class Deck {
     // add method for card count
 }
 
-
+renderDeck();
 init();
 // initialize start variables 
 // call shuffle & create deck functions upon loading
@@ -91,18 +91,27 @@ function init() {
     console.log("Player 1: ", playerDecks[0]);
     console.log("Player 2: ", playerDecks[1]);
 
-    // cardCount = {
-    //     player1:  26,
-    //     player2: 26
-    // };
-
-    // render();
+    cardCount = {
+        player1:  26,
+        player2: 26
+    };
+    winner = null;
+    render();
+    
 }
 
 function render() {
     countEl.player1.innerText = cardCount.player1;
     countEl.player2.innerText = cardCount.player2;
 }
+
+function renderDeck(d1, d2){
+    document.querySelector(".card-back-container").innerHTML = `<div class="card-back-container">
+    <div id="card-deck1" class="card large ${d1}"</div>
+    <div id="card-deck2" class="card large ${d2}"</div>`;
+}
+
+
 
 
 function playRound() {
