@@ -74,7 +74,7 @@ class Deck {
     // add method for card count
 }
 
-renderDeck();
+
 init();
 // initialize start variables 
 // call shuffle & create deck functions upon loading
