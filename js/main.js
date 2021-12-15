@@ -7,8 +7,6 @@ const suits = ['s', 'c', 'd', 'h'];
 let player1Cards;
 let player2Cards;
 let war;
-let shuffledDeck = [];
-let winner;
 
 /**** Cached Elements ****/
 // card count element
@@ -16,14 +14,19 @@ const countEl = {
     player1: document.querySelector("#player-1-card-count"),
     player2: document.querySelector("#player-2-card-count")
 };
+
+const activeCardEl = {
+    player1Active: document.querySelector("#player1-active"),
+    player2Active: document.querySelector("#player2-active")
+};
+
 const winnerMsgEl = document.querySelector(".winner-msg");
-const gameBoardEl = document.querySelector(".game-board");
 
 /**** Event Listeners ****/
 // elements to listen for- buttons have been tested
 // draw cards button
 // restart button
-document.querySelector(".drw-btn").addEventListener("click", playRound);
+//document.querySelector(".drw-btn").addEventListener("click", playRound);
 document.querySelector(".restart-btn").addEventListener("click", restartGame);
 
 /**** Functions ****/
@@ -70,10 +73,10 @@ class Deck {
     splitPlayerDecks(){
         
         let player1Cards = this.cards.slice(0, 26);
-        console.log("test", player1Cards)
+        //console.log("test", player1Cards)
 
         let player2Cards = this.cards.slice(26, 52);
-        console.log("test2", player2Cards)
+        //console.log("test2", player2Cards)
         return [player1Cards, player2Cards];
     }
     // add method for card count
@@ -95,23 +98,37 @@ function init() {
     let playersCards = tempDeck.splitPlayerDecks();
     player1Cards = playersCards[0];
     player2Cards = playersCards[1];
- 
+    
     winner = null;
+
     render();
- 
 }
 
+//render values
 function render() {
     countEl.player1.innerText = player1Cards.length;
     countEl.player2.innerText = player2Cards.length;
 
-    
 }
+
+// break this up into render and playRound 
+const drawCards = document.querySelector(".drw-btn");
+drawCards.addEventListener("click", function(e) {
+    activeCardEl.player1Active.className = "card xlarge";
+    let flippedCard1 = player1Cards.pop();
+    const flippedCard1Class = flippedCard1.getClass();
+    activeCardEl.player1Active.classList.add(flippedCard1Class);
+    
+    activeCardEl.player2Active.className = "card xlarge";
+    let flippedCard2 = player2Cards.pop();
+    const flippedCard2Class = flippedCard2.getClass();
+    activeCardEl.player2Active.classList.add(flippedCard2Class);
+
+});
+
 
 
 function playRound() {
-    console.log("PR functino is being invoked!");
-    
 
 
 }
