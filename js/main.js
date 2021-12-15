@@ -4,9 +4,8 @@ const suits = ['s', 'c', 'd', 'h'];
 
 
 /**** State Variables ****/
-let player1Deck;
-let player2Deck;
-let cardCount;
+let player1Cards;
+let player2Cards;
 let war;
 let shuffledDeck = [];
 let winner;
@@ -17,7 +16,8 @@ const countEl = {
     player1: document.querySelector("#player-1-card-count"),
     player2: document.querySelector("#player-2-card-count")
 };
-const wnrMsgEl = document.querySelector(".winner-msg");
+const winnerMsgEl = document.querySelector(".winner-msg");
+const gameBoardEl = document.querySelector(".game-board");
 
 /**** Event Listeners ****/
 // elements to listen for- buttons have been tested
@@ -32,6 +32,11 @@ class Card {
     constructor(rank, suit) {
         this.rank = rank;
         this.suit = suit;
+    }
+
+    getClass(){
+        let classString = `${this.suit}${this.rank}`;
+        return classString;
     }
 }
 
@@ -49,8 +54,7 @@ class Deck {
         this.cards = tmpCards;
         console.log(tmpCards);
     }
-    // getter
-    get getCards(){
+    getCards(){
         return this.cards;
     }
     // methods
@@ -64,12 +68,13 @@ class Deck {
         console.log(shuffledDeck);
     }
     splitPlayerDecks(){
-        let player1Deck = this.cards.slice(0, 26);
-        console.log("test", player1Deck)
+        
+        let player1Cards = this.cards.slice(0, 26);
+        console.log("test", player1Cards)
 
-        let player2Deck = this.cards.slice(26, 52);
-        console.log("test2", player2Deck)
-        return [player1Deck, player2Deck];
+        let player2Cards = this.cards.slice(26, 52);
+        console.log("test2", player2Cards)
+        return [player1Cards, player2Cards];
     }
     // add method for card count
 }
@@ -87,30 +92,28 @@ function init() {
     tempDeck.shuffleDeck();
   
    //split deck between players
-    let playerDecks = tempDeck.splitPlayerDecks();
-    console.log("Player 1: ", playerDecks[0]);
-    console.log("Player 2: ", playerDecks[1]);
-
-    cardCount = {
-        player1:  26,
-        player2: 26
-    };
+    let playersCards = tempDeck.splitPlayerDecks();
+    player1Cards = playersCards[0];
+    player2Cards = playersCards[1];
+ 
     winner = null;
     render();
  
 }
 
 function render() {
-    countEl.player1.innerText = cardCount.player1;
-    countEl.player2.innerText = cardCount.player2;
+    countEl.player1.innerText = player1Cards.length;
+    countEl.player2.innerText = player2Cards.length;
+
+    
 }
-
-
-
 
 
 function playRound() {
     console.log("PR functino is being invoked!");
+    
+
+
 }
 
 
