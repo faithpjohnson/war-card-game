@@ -31,7 +31,7 @@ let winnerMsgEl = document.querySelector(".winner-msg");
 document.querySelector(".drw-btn").addEventListener("click", drawCards);
 document.querySelector(".restart-btn").addEventListener("click", restartGame);
 
-/*----- functions -----*/
+/*----- classes -----*/
 class Card {
     constructor(rank, suit) {
         this.rank = rank;
@@ -89,6 +89,7 @@ class Deck {
     }
 }
 
+/*----- functions -----*/
 init();
 
 function init() {
@@ -103,8 +104,6 @@ function init() {
     let playersCards = tempDeck.splitPlayerDecks();
     player1Cards = playersCards[0];
     player2Cards = playersCards[1];
-
-    winner = null;
 
     drawCards();
 }
@@ -123,18 +122,18 @@ function render() {
 
     winnerMsgEl.innerText = gameMessage;
 
-    console.log("=====================START==========================");
-    console.log("player1Cards", player1Cards);
-    console.log("player2Cards", player2Cards);
-    console.log("warStack", warStack);
-    console.log("flippedCard1", flippedCard1);
-    console.log("flippedCard2", flippedCard2);
-    console.log("gameMessage", gameMessage);
-    console.log("player1CardValue", player1CardValue);
-    console.log("player2CardValue", player2CardValue);
+    // console.log("=====================START==========================");
+    // console.log("player1Cards", player1Cards);
+    // console.log("player2Cards", player2Cards);
+    // console.log("warStack", warStack);
+    // console.log("flippedCard1", flippedCard1);
+    // console.log("flippedCard2", flippedCard2);
+    // console.log("gameMessage", gameMessage);
+    // console.log("player1CardValue", player1CardValue);
+    // console.log("player2CardValue", player2CardValue);
     console.log(`cards add up to 52: ${player1Cards.length + player2Cards.length === 52}`);
     console.log(`cards add up to 52: ${player1Cards.length + player2Cards.length}`);
-    console.log("======================END=========================");
+    // console.log("======================END=========================");
 }
 
 
@@ -147,7 +146,6 @@ function drawCards(){
     player2CardValue = flippedCard2.getCardValue();
     console.log(player1CardValue, player2CardValue);
     
- 
     getRoundWinner();
     render();
     
@@ -162,18 +160,15 @@ function getRoundWinner(){
         gameMessage = "Player 1 Wins this round";
     } else if(player2CardValue > player1CardValue){
         console.log("Player 2 Wins!");
-        player2Cards.push(flippedCard1);
-        player2Cards.push(flippedCard2);
-        player2Cards.push(...warStack);
+        player2Cards.push(flippedCard1, flippedCard2, ...warStack);
+        // player2Cards.push(flippedCard2);
+        // player2Cards.push(...warStack);
         gameMessage = "Player 2 Wins this round";
     } else {
         console.log("WAR");
         gameMessage = "It's WAR!";
-        // put cards in war stack
-        warStack.push(flippedCard1);
-        warStack.push(flippedCard2);
-
-        // draw additional cards from each card stack
+        warStack.push(flippedCard1, flippedCard2);
+        // warStack.push(flippedCard2);
         drawCards();
     }
 
