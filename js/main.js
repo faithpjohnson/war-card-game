@@ -25,10 +25,7 @@ const drawCardsbutton = document.querySelector(".draw-btn");
 /*----- event listeners -----*/
 document.querySelector(".draw-btn").addEventListener("click", drawCards);
 document.querySelector(".restart-btn").addEventListener("click", restartGame);
-<<<<<<< HEAD
 
-=======
->>>>>>> main
 /*----- classes -----*/
 class Card {
 	constructor(rank, suit) {

@@ -23,7 +23,8 @@ When it's war, click the draw again button the reveal the battle card.
 To start the game over, click the restart button.
 
 ## Icebox:
-Expand on war logic   
+Expand on war logic
+Add animations     
 Make code more efficient  
-Add animations  
+ 
 
