@@ -24,7 +24,7 @@ To start the game over, click the restart button.
 
 ## Icebox:
 Expand on war logic
-Add animations     
+Add animations       
 Make code more efficient  
  
 
