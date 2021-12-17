@@ -6,14 +6,13 @@ War is a simple card game, played by two players using a standard card deck of 5
 **Gameplay**: 
 
 ## Screenshots:
-<img width="1075" alt="wireframe-1 " src="https://user-images.githubusercontent.com/84732714/145652925-cc207467-a250-44d2-a9ef-d9d66ade1a9c.png">
-<img width="1075" alt="wireframe-2" src="https://user-images.githubusercontent.com/84732714/145652935-a6a67dc2-aedf-4721-8f87-891fe5385927.png">
-<img width="1075" alt="wireframe-3" src="https://user-images.githubusercontent.com/84732714/145652943-71d8f4f9-834b-43f0-a456-0015fbbfd025.png">
-<img width="1076" alt="wireframe-4" src="https://user-images.githubusercontent.com/84732714/145652948-08ead7e6-280d-452f-a155-c58962d2ef98.png">
-<img width="1076" alt="wireframe-last" src="https://user-images.githubusercontent.com/84732714/145652955-3c8ec650-58f3-435f-8dff-9691edac48cd.png">
+
+<img width="954" alt="War1" src="https://user-images.githubusercontent.com/84732714/146495170-62c7e1d0-c957-482b-aef5-7e707f4114f8.png">
+<img width="952" alt="War2" src="https://user-images.githubusercontent.com/84732714/146495182-4f0b0faf-d225-4a85-b5c8-e62998434104.png">
+<img width="953" alt="War3" src="https://user-images.githubusercontent.com/84732714/146495191-26f5baa9-f6ed-43c2-be43-4d7bc6f13adb.png">
 
 ## Technologies Used:
-HTML, CSS and Javascript
+
 
 ## Getting Started:
 link to game 
