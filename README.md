@@ -15,7 +15,7 @@ War is a simple card game, played by two players, using a standard deck of 52 ca
 HTML, CSS, and JavaScript
 
 ## Getting Started:
-[Play Game Here!] (https://faypayjay.github.io/war-card-game/) 
+[Play Game Here](https://faypayjay.github.io/war-card-game/)  
 Click the start game button to draw the first cards.  
 The card count will update and a round winner message will appear.  
 Click draw cards button to keep playing.  
