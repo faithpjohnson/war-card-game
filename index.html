@@ -8,56 +8,43 @@
     <link rel="stylesheet" href="css/cards.css">
     <link rel="stylesheet" href="css/main.css">
     <script defer src="js/main.js"></script>
-    <!-- <script defer src="js/main2.js"></script> -->
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <title>War Card Game</title>
 
 </head>
 
 <body>
-    <div class="container">
-        <div class="title">
-            <h1>GAME OF WAR!</h1>
-        </div>
-     
-        <div class="flp1">
-            <div id="player1-active" class="card"></div>
-        </div>
-        <div class="winner-msg wnr"></div>
-        <div class="flp2">
-            <div id="player2-active" class="card"></div>
-        </div>
-
-        <div id="player-1-card-count" class="card-count cc1">
-            <p>Card Count:</p>
-        </div>
-
-        <div id="card-deck1" class="card-back-container card large back-blue cd1"></div>  
-        
-        <div class="drw-btn drw">
-            <button>Draw Cards</button>
-        </div>
-
-        <div id="card-deck2" class="card-back-container card large back-blue  cd2"></div>
-
-        <div id="player-2-card-count" class="card-count cc2">
-            <p>Card Count:</p>
-        </div>
-
-        <div class="player1 plr1">
-            <p>Player 1</p>
-        </div>
-
-        <div class="restart-btn rsrt">
-            <button>Restart</button>
-        </div>
-
-        <div class="player2 plr2">
-            <p>Player 2</p>
-        </div>
-
-    </div>
-
+	<div class="container">
+		<div class="title">
+			<h1>GAME OF WAR!</h1>
+		</div>
+		<div class="flp1">
+			<div class="card" id="player1-active"></div>
+		</div>
+		<div class="winner-msg wnr"></div>
+		<div class="flp2">
+			<div class="card" id="player2-active"></div>
+		</div>
+		<div class="card-count cc1" id="player-1-card-count">
+			Card Count:
+		</div>
+		<div class="card-back-container card shadow large back-blue cd1" id="card-deck1"></div>
+		<div class="draw-btn drw">
+			<button>Draw Cards</button>
+		</div>
+		<div class="card-back-container card shadow large back-blue cd2" id="card-deck2"></div>
+		<div class="card-count cc2" id="player-2-card-count">
+			Card Count:
+		</div>
+		<div class="player1 plr1">
+			<p>Player 1</p>
+		</div>
+		<div class="restart-btn rsrt">
+			<button>Restart</button>
+		</div>
+		<div class="player2 plr2">
+			<p>Player 2</p>
+		</div>
+	</div>
 </body>
-
 </html>
