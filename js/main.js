@@ -1,6 +1,7 @@
 /*----- constants -----*/
 const ranks = ['02', '03', '04', '05', '06', '07', '08', '09', '10', 'J', 'Q', 'K', 'A'];
 const suits = ['s', 'c', 'd', 'h'];
+
 /*----- app's state (variables) -----*/
 let player1Cards;
 let player2Cards;
@@ -11,6 +12,7 @@ let gameMessage = "";
 let player1CardValue;
 let player2CardValue;
 let drawButton;
+
 /*----- cached element references -----*/
 let countEl = {
 	player1: document.querySelector("#player-1-card-count"),
@@ -22,6 +24,7 @@ const activeCardEl = {
 };
 let winnerMsgEl = document.querySelector(".winner-msg");
 const drawCardsbutton = document.querySelector(".draw-btn");
+
 /*----- event listeners -----*/
 document.querySelector(".draw-btn").addEventListener("click", drawCards);
 document.querySelector(".restart-btn").addEventListener("click", restartGame);
@@ -70,6 +73,7 @@ class Deck {
 		return [player1Cards, player2Cards];
 	}
 }
+
 /*----- functions -----*/
 init();
 render();
